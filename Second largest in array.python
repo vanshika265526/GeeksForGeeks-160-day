@@ -1,0 +1,31 @@
+#Given an array of positive integers arr[], return the second largest element from the array. If the second largest element doesn't exist then return -1.
+
+class Solution:
+    def getSecondLargest(self, arr):
+        # Code Here
+        
+        #CASE 1: IF THE ARRAY LENGTH IS LESS THAN 2 = NO SECOND LARGEST
+        if len(arr)<2:
+            return -1
+        
+        #CASE 2: IF ARRAY LENGTH GREATER THAN 2 
+        
+        #We are initialising two variable for first and second greatest number with negative infinity
+        first=second=float('-inf')
+        
+        #starting the loop and conditions for checking
+        for i in arr:
+          #
+            if i>first:
+                second=first
+                first=i
+            elif i>second and i!=first:
+                second=i
+        
+        #check if second value is not negative infinity only then you can print result
+        if second!='-inf':
+            return second
+        #otherwise print -1
+        else:
+            return -1
+        
