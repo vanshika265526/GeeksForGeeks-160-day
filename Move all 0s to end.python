@@ -1,0 +1,26 @@
+'''You are given an array arr[] of non-negative integers. You have to move all the zeros in the array to the right 
+end while maintaining the relative order of the non-zero elements. The operation must be performed in place, meaning
+you should not use extra space for another array.'''
+
+class Solution:
+	def pushZerosToEnd(self, arr):
+    	# code here
+    	
+    	#first  will get the length of the array
+    	n=len(arr)
+    	
+    	#lets move all the non zero elements to front
+    	pos=0
+    	#this is the position tracking for placing our next non zero element ina rray
+
+  
+    	for i in range(n):
+        #if the element is non zero element, put it in front position and increase position  by 1
+    	    if arr[i]!=0:
+    	        arr[pos]=arr[i]
+    	        pos=pos+1
+    	 #then for all remaining positions after , make 0
+    	for i in range(pos,n):
+    	    arr[i]=0
+    	    
+    	 
