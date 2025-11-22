@@ -1,0 +1,14 @@
+class Solution:
+    def reverseArray(self, arr):
+        # code here
+        left=0
+        right=len(arr)-1
+        while left<right:
+            new=arr[left]
+            arr[left]=arr[right]
+            arr[right]=new
+            left=left+1
+            right=right-1
+        
+        
+        
