@@ -1,0 +1,23 @@
+#User function Template for python3
+
+class Solution:
+    #Function to rotate an array by d elements in counter-clockwise direction. 
+    def rotateArr(self, arr, d):
+        #Your code here
+        n=len(arr)
+        d=d%n
+        
+        # we cannot use arr.reverse() here because it reverses entire list and not half like in cpp
+        
+        #for implementing this we will create another method
+        def reverse(arr,l,r):
+            
+            while l<r:
+                arr[l],arr[r]=arr[r],arr[l]
+                l=l+1
+                r=r-1
+        #now use this method
+        
+        reverse(arr,0,d-1)
+        reverse(arr,d,n-1)
+        reverse(arr,0,n-1)
