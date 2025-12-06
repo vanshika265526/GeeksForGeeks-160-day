@@ -9,3 +9,35 @@ Explanation:
 + 111
 10100
   */
+
+// User function template for C++
+class Solution {
+  public:
+    string addBinary(string& s1, string& s2) {
+        
+        int i=s1.size()-1;
+        int j=s2.size()-1;
+        int carry=0;
+        string res="";
+        
+        while(i>=0 || j>=0 || carry){
+            int sum=carry;
+            if(i>=0) sum+=s1[i--]-'0';
+            if(j>=0) sum+=s2[j--]-'0';
+            
+            res.push_back((sum%2)+'0');
+            carry=sum/2;
+        }
+        
+        reverse(res.begin(),res.end());
+        int k=0;
+        while(k<res.size() && res[k]=='0'){
+            k++;
+        }
+            res=res.substr(k);
+            return res==""?"0":res;
+        
+    }
+};
+
+
